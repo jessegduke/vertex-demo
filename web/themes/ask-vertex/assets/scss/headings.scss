@@ -1,0 +1,78 @@
+@import "_variables.scss";
+
+@mixin headings {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @content;
+    }
+}
+
+@include headings {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+    padding: 0;
+    line-height: 120%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    margin-top: 2em;
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 11px;
+    letter-spacing: 1.25px;
+    color: #777;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+hr {
+    border:none;
+    border-top:1px solid $border-medium;
+    margin: 2em 0;
+}
+
+@include media-medium {
+    $base-mobile-heading-size: 24px;
+
+    h1 {
+        font-size: $base-mobile-heading-size;
+    }
+
+    h2 {
+        font-size: $base-mobile-heading-size * 0.85;
+    }
+
+    h3 {
+        font-size: $base-mobile-heading-size * 0.7;
+    }
+
+    h4 {
+        font-size: $base-mobile-heading-size * 0.65;
+    }
+
+    h5 {
+        font-size: $base-mobile-heading-size * 0.42;
+    }
+}

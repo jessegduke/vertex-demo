@@ -1,0 +1,23 @@
+baseURL = 'https://localhost:1313/'
+languageCode = 'en-us'
+title = 'Ask Vertex Search'
+theme = 'ask-vertex'
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[params]
+    Keywords = "Vertex Search Google GCP"
+    Description = "A Demo Framework"
+
+[sitemap]
+  changefreq = 'monthly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[[cascade]]
+  [cascade._target]
+    path = "**/README.md"
+  [cascade._build]
+    render = "never"
+    list = "never"

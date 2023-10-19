@@ -1,0 +1,164 @@
+@import "_variables.scss";
+
+@import "normalize.scss";
+@import "nav.scss";
+@import "headings.scss";
+@import "forms.scss";
+@import "footer.scss";
+
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: $font-google-sans;
+    color: $color-text;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    // use flex so footer sticks to bottom of page
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.35px;
+
+    main {
+        flex-grow: 1;
+        max-width: $layout-breakpoint-max;
+        padding: 1.5rem 4rem 0.5rem 4rem;
+        margin: auto;
+
+        @include media-medium {
+            padding: .75em;
+        }
+
+        @include media-small {
+            padding: .5em;
+        }
+
+    }
+}
+
+p,
+.paragraph,
+select {
+    font-family: $font-roboto;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1em;
+
+    @include media-medium {
+        line-height:1.35;
+    }
+}
+
+p > strong {
+    font-weight: 500;
+}
+
+a {
+    color: $color-link;
+
+    &:hover {
+        color: $color-link-hover;
+    }
+    &:focus {
+        color: $color-link-focus;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    @include box-shadow-light;
+    z-index: 100;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+section.banner {
+    background-color: $background-light;
+
+    .content {
+        display: flex;
+        max-width: $layout-breakpoint-max;
+        padding: 2rem 4rem;
+        margin: auto;
+        line-height: 1.75;
+
+        p {
+            font-family: $font-google-sans;
+            font-weight: 300;
+        }
+
+        @include media-medium {
+            padding: 1rem;
+        }
+
+        img.highlight {
+            width: 40%;
+            max-width: 400px;
+            margin-left: 1.5em;
+
+            @include media-medium {
+                display: none;
+            }
+        }
+    }
+}
+
+.pagefooter {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3em;
+    border-top:1px solid $border-light;
+
+    @include media-medium {
+        flex-direction: column;
+    }
+
+    div {
+        margin: 2rem;
+
+        @include media-medium {
+            margin: 0.5rem 1rem;
+        }
+
+        &:has(h2) {
+            min-width: 25%;
+            flex-grow: 1;
+        }
+
+    }
+}
+
+.google-material-icons {
+    font-family: 'Google Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+
+    &.divider-before {
+        border-left:1px solid $border-light;
+    }
+}
+
+.grecaptcha-badge {
+    /* visibility: hidden; */
+}
+
+// for alpinejs: hide cloaked elements while page is loading
+[x-cloak] { display: none !important; }

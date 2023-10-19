@@ -1,0 +1,32 @@
+<meta charset="utf-8" />
+<link rel="icon" href="/favicon.png" />
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=...."></script>
+<script defer src="/js/alpinejs@3.12.1.min.js"></script>
+
+<title>Ask Vertex | {{ if .Params.TitleForHTMLHead }}{{ .Params.TitleForHTMLHead }}{{ else }}{{ .Title }}{{ end }}</title>
+{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "normal") }}
+{{ $styles := resources.Get "scss/main.scss" | toCSS $options | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+<!-- add page-specific stylesheets (TODO: stop using these and just put <style> tags in the body, which is acceptable per HTML5) -->
+{{ range .Params.stylesheets }}
+    {{ $stylesheet := printf "scss/%s.scss" .name | resources.Get | toCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+{{ end }}
+
+<meta name="description" content="{{ .Site.Params.Description }}">
+<meta name="keywords" content="{{ .Site.Params.Keywords }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:wght@100,300,400,500,700|Google+Material+Icons&amp;lang=en" rel="stylesheet">
+
+<!-- favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<!-- <link rel="manifest" href="/site.webmanifest"> -->
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+

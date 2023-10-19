@@ -1,0 +1,37 @@
+.DS_Store
+.vscode/
+
+# Crawler
+utils/crawler/gcs_content/**
+!utils/crawler/gcs_content/.gitkeep
+
+# Generated files by hugo
+web/public/**
+!web/public/.gitkeep
+web/draft/**
+web/resources/_gen/**
+web/assets/jsconfig.json
+web/hugo_stats.json
+web/.hugo_build.lock
+
+# Firebase work directory and local logs and development
+.firebaserc
+.firebase/*
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Local instance of Firebase Configs
+*.local
+.env.local
+!.env.example
+
+# Node mods
+**/node_modules
+
+#exclude secrets
+**/secrets/*
+
+# Terraform
+**/.terraform
+**.tfplan_out.bin

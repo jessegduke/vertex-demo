@@ -1,0 +1,9 @@
+{{ define "banner" }}
+    <h1>{{ .Params.bannerTitle }}</h1>
+    <p>{{ .Params.bannerSubtitle }}</p>
+{{ end }}
+{{ define "main" }}
+    <section class="features">
+        {{ .Content }}
+    </section>
+{{ end }}

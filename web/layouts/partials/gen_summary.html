@@ -1,0 +1,16 @@
+<p x-show="formData.showResults" class="font-bold">Generated Summary</p>
+<template x-for="(reply, i) in searchData.replies">
+    <div>
+        <div id="summaries" class="search summary">
+            <div >
+                <div class="">
+                    <img src="/img/quote.png" width="20" alt="Quote" />
+                </div>
+
+                <span class="font-bold" x-text="searchData.queries[i]"></span>
+                <p></p>
+                <span x-html="reply.reply">
+            </div>
+        </div>
+    </div>
+</template>

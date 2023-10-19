@@ -1,0 +1,129 @@
+@import "_variables.scss";
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+.lg-font-bold {
+    font-weight: 700;
+    font-size: 1.875rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.search-btn {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.search-txt-box {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid #dadce0;
+    text-align: center;
+    width: 99%;
+}
+
+.reset {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgb(107, 114, 128)/1;
+    color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+.summary {
+    text-align: left;
+    background-color: rgb(225, 239, 254 / 1);
+    border-radius: 0.25rem;
+
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 42rem;
+
+    border-radius: 0.5rem;
+    border: 1px solid rgba(229, 231, 235, 1);
+    padding: 1.5rem;
+}
+
+.document-entry {
+    margin: auto;
+    padding: 1.5rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    line-height: inherit;
+    box-sizing: border-box;
+
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 42rem;
+
+    border: 1px solid rgb(229, 231, 235 / 1);
+    border-radius: .5rem;
+    background-color: rgb(255, 255, 255 / 1);
+    color: rgb(107, 114, 128 / 1);
+
+    &:hover {
+        background-color: #f2f2f2;
+    }
+}
+
+#search-results a {
+    text-decoration: none;
+}
+
+.svg-image {
+    grid-column: 1;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    line-height: inherit;
+    fill: none;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    height: 48px;
+    width: 48px;
+    color: rgb(31, 41, 55 / 1);
+}
+
+.document-header {
+    margin: 0;
+    margin-bottom: .5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -.025em;
+    color: rgb(17, 24, 39 / 1);
+}
+
+.document-snippet {
+    grid-column: 2;
+    border-color: #e5e7eb;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.25;
+    color: rgb(55, 65, 81 / 1);
+}
+
+
+

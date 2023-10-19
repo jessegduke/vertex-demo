@@ -1,0 +1,40 @@
+<!-- Vertex AI Search widget bundle -->
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+
+<!-- custom JS for Widget -->
+<script src="/js/vertex-widget-globals.js"></script>
+<script src="/js/vertex-widget.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Le5-BQmAAAAAMs1Nbm38roKdHBAXiPEt1cd8xjf"></script>
+
+<div class="search-container">
+    <div x-data="SearchForm()">
+        <hr>
+        <form id="vertex-inquiry-form"  @submit.prevent="doAIQuery">
+            <div>
+                <span class="lg-font-bold">Example questions:</span>
+                <div > <!-- TODO:  Update the following three lines for "Example Questions" -->
+                    <button type="button" role="button" class="secondary search-btn" x-on:click="updateSearchField('What is ...?')">What is ...?</button>
+                    <button type="button" role="button" class="secondary search-btn" x-on:click="updateSearchField('What are ...?')">What are ...?</button>
+                    <button type="button" role="button" class="secondary search-btn" x-on:click="updateSearchField('What are ...?')">What are ...?</button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input id="search"  type="search" class="search-txt-box"
+                            name="search" x-bind:placeholder="formData.placeholder"
+                            required x-model="formData.input">
+
+                    <button id="submit" type="submit" class="search-btn"
+                            x-bind:disabled="formData.searchDisabled" x-text="formData.buttonMessage"></button>
+
+                    <button id="reset"  type="reset"  class="reset"
+                            x-bind:disabled="formData.searchDisabled"
+                            x-on:click="resetForm()">Reset</button>
+                </div>
+            </div>
+        </form>
+        <hr>
+        {{- partial "gen_summary" -}}
+        {{- partial "gen_relevant_docs" -}}
+    </div>
+</div>

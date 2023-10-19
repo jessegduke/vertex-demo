@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="search">
+    <div>
+        <article>
+            {{ .Content }}
+        </article>
+    </div>
+    <div>
+        {{- partial "ask_crawler" -}}
+    </div>
+</section>
+{{ end }}
